@@ -60,11 +60,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\DevTools\Arduino\hardware\arduino\sam\cores\arduino;D:\DevTools\Arduino\hardware\arduino\sam\variants\arduino_due_x;D:\DevTools\Arduino\hardware\arduino\sam\system\CMSIS\CMSIS\Include\;D:\DevTools\Arduino\hardware\arduino\sam\system\CMSIS\Device\ATMEL\;D:\DevTools\Arduino\hardware\arduino\sam\system\libsam;D:\DevTools\Arduino\hardware\arduino\sam\system\libsam\include;D:\DevTools\Arduino/hardware/tools/g++_arm_none_eabi\arm-none-eabi\include;D:\DevTools\Arduino/hardware/tools/g++_arm_none_eabi\arm_none_eabi\include\;D:\DevTools\Arduino/hardware/tools/g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include;D:\DevTools\Arduino/hardware/tools/g++_arm_none_eabi\lib\gcc\arm-none-eabi\4.4.1\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\DevTools\Arduino\hardware\arduino\avr\cores\arduino;D:\DevTools\Arduino\hardware\arduino\avr\variants\yun;D:\Users\Chris\Documents\Arduino\libraries\Sharp2Y0A21ArduinoDue;D:\Users\Chris\Documents\Arduino\libraries\Sharp2Y0A21ArduinoDue\utility;d:\devtools\arduino\hardware\tools\avr\avr\include\;d:\devtools\arduino\hardware\tools\avr\avr\include\avr\;d:\devtools\arduino\hardware\tools\avr\avr\;d:\devtools\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>D:\Users\Chris\Documents\Arduino\Sharp2Y0A21ArduinoDue\Visual Micro\.Sharp2Y0A21ArduinoDue.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <PreprocessorDefinitions>__SAM3X8E__;USB_VID=0x2341;USB_PID=0x003e;USBCON;USB_MANUFACTURER="Unknown";USB_PRODUCT="Arduino Due";ARDUINO=150;ARDUINO_MAIN;printf=iprintf;__SAM__;__sam__;F_CPU=84000000L;__cplusplus;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__SAM3X8E__;USB_VID=0x2341;USB_PID=0x003e;USBCON;USB_MANUFACTURER="Unknown";USB_PRODUCT="Arduino Due";ARDUINO=150;ARDUINO_MAIN;__AVR__;__avr__;F_CPU=84000000L;__cplusplus;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

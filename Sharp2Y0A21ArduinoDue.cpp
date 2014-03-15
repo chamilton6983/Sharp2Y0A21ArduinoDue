@@ -87,8 +87,7 @@ int Sharp2Y0A21ArduinoDue::_mapRawToVolts(int raw)
 
 int Sharp2Y0A21ArduinoDue::_mapVoltsToCM(int volts)
 {
-	float cm = ((-0.0000000000089101*(volts ^ 7)) + (0.0000000029761*(volts ^ 6)) - (0.00000041567*(volts ^ 5)) + (0.000031617*(volts ^ 4)) - (0.0014285*(volts ^ 3)) + (0.039188*(volts ^ 2)) - (0.64009*volts) + 5.9493);
-
+	int cm = ((-0.0000000000089101*(volts ^ 7)) + (0.0000000029761*(volts ^ 6)) - (0.00000041567*(volts ^ 5)) + (0.000031617*(volts ^ 4)) - (0.0014285*(volts ^ 3)) + (0.039188*(volts ^ 2)) - (0.64009*volts) + 5.9493);
 	if (cm < 10)
 	{
 		cm = 0;

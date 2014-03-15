@@ -11,10 +11,9 @@ Sharp2Y0A21ArduinoDue::~Sharp2Y0A21ArduinoDue()
 {
 }
 
-void Sharp2Y0A21ArduinoDue::begin(int pin)
+void Sharp2Y0A21ArduinoDue::initialise(int pin)
 {
-	_pin = pin;
-	pinMode(pin, INPUT);
+	setPin(pin);
 	setAveraging(10);
 	setAccuracy(10);
 }

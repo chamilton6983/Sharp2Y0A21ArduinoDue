@@ -1,13 +1,21 @@
+#include <Sharp2Y0A21ArduinoDue.h>
+
+Sharp2Y0A21ArduinoDue Sensor;
+
+int distance;
+const int pin = A0;
+const int rate = 9600;
+
 void setup()
 {
-
-  /* add setup code here */
-
+	Serial.begin(rate);
+	Sensor.initialise(pin);
 }
 
 void loop()
 {
-
-  /* add main program code here */
-
+	distance = Sensor.getDistanceRaw();
+	Serial.print("\n");
+	Serial.print(distance);
+	delay(100);
 }

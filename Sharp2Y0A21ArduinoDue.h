@@ -8,7 +8,7 @@ class Sharp2Y0A21ArduinoDue
 public:
 	Sharp2Y0A21ArduinoDue();
 	~Sharp2Y0A21ArduinoDue();
-	void begin(int pin);
+	void initialise(int pin);
 	int getDistanceRaw();
 	int getDistanceVolts();
 	int getDistanceCM();

@@ -21,30 +21,17 @@ void Sharp2Y0A21ArduinoDue::begin(int pin)
 
 int Sharp2Y0A21ArduinoDue::getDistanceRaw()
 {
-	int raw = analogRead(_pin);
-	return raw;
+	return analogRead(_pin);
 }
 
 int Sharp2Y0A21ArduinoDue::getDistanceVolts()
 {
-	int raw = getDistanceRaw();
-	int volts = _mapRawToVolts(raw);
-	return volts;
+	return _mapRawToVolts(getDistanceRaw());
 }
 
 int Sharp2Y0A21ArduinoDue::getDistanceCM()
 {
-	int volts = getDistanceVolts();
-	int cm = _mapVoltsToCM(volts);
-	if (cm < 8)
-	{
-		cm = 0;
-	}
-	else if (cm > 80)
-	{
-		cm = 255;
-	}
-	return cm;
+	return _mapVoltsToCM(getDistanceVolts());
 }
 
 int Sharp2Y0A21ArduinoDue::getAverageDistanceRaw()
@@ -102,14 +89,7 @@ int Sharp2Y0A21ArduinoDue::getADCAccuracy()
 
 void Sharp2Y0A21ArduinoDue::setPolyAccuracy(int poly)
 {
-	if (poly <= 5)
-	{
-		_poly = poly;
-	}
-	else
-	{
-		_poly = 5;
-	}
+	_poly = poly;
 }
 
 int Sharp2Y0A21ArduinoDue::getPolyAccuracy()
@@ -130,33 +110,17 @@ int Sharp2Y0A21ArduinoDue::getPin()
 
 int Sharp2Y0A21ArduinoDue::_mapRawToVolts(int raw)
 {
-	int volts = map(raw, 0, _max - 1, 0, 3300);
-	return volts;
+	return map(raw, 0, _max - 1, 0, 3300);
 }
 
 int Sharp2Y0A21ArduinoDue::_mapVoltsToCM(int volts)
 {
-	int cm;
-	switch (_poly)
+	if (_poly == 5)
 	{
-	case 1:
-		cm = (-0.023646 * volts) + 65.48;
-		break;
-	case 2:
-		cm = (0.000019481 * pow(volts, 2)) + (-0.087711 * volts) + 101.03;
-		break;
-	case 3:
-		cm = (-0.000000013681 * pow(volts, 3)) + (0.000086017 * pow(volts, 2)) + (-0.17777 * volts) + 132.82;
-		break;
-	case 4:
-		cm = (0.000000000010404 * pow(volts, 4)) + (-0.000000083226 * pow(volts, 3)) + (0.00024228 * pow(volts, 2)) + (-0.31232 * volts) + 168.89;
-		break;
-	case 5:
-		cm = (-0.0000000000000078233 * pow(volts, 5)) + (0.000000000075274 * (pow(volts, 4)) + (-0.0000002814 * pow(volts, 3)) + (0.00051584 * pow(volts, 2)) + (-0.47973 * volts) + 204.6);
-		break;
-	default:
-		cm = (-0.023646 * volts) + 65.48;
-		break;
+		return (-0.0000000000000078233 * pow(volts, 5)) + (0.000000000075274 * (pow(volts, 4)) + (-0.0000002814 * pow(volts, 3)) + (0.00051584 * pow(volts, 2)) + (-0.47973 * volts) + 204.6);
 	}
-	return cm;
+	else
+	{
+		return (-0.023646 * volts) + 65.48;
+	}
 }

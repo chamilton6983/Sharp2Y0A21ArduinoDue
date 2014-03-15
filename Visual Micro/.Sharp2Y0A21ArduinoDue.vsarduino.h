@@ -9,8 +9,9 @@
 #define USB_PRODUCT "\"Arduino Due\""
 #define ARDUINO 150
 #define ARDUINO_MAIN
-#define __AVR__
-#define __avr__
+#define printf iprintf
+#define __SAM__
+#define __sam__
 #define F_CPU 84000000L
 #define __cplusplus
 #define __inline__
@@ -22,23 +23,29 @@
 #define __asm__ 
 #define __volatile__
 
-#define __builtin_va_list
-#define __builtin_va_start
-#define __builtin_va_end
-#define __DOXYGEN__
-#define __attribute__(x)
-#define NOINLINE __attribute__((noinline))
+#define __ICCARM__
+#define __ASM
+#define __INLINE
+#define __GNUC__ 0
+#define __ICCARM__
+#define __ARMCC_VERSION 400678
+#define __attribute__(noinline)
+
 #define prog_void
 #define PGM_VOID_P int
             
 typedef unsigned char byte;
 extern "C" void __cxa_pure_virtual() {;}
 
+
+
+
 //
 //
 
-#include "D:\DevTools\Arduino\hardware\arduino\avr\cores\arduino\arduino.h"
-#include "D:\DevTools\Arduino\hardware\arduino\avr\variants\yun\pins_arduino.h" 
+#include "D:\DevTools\Arduino\hardware\arduino\sam\cores\arduino\arduino.h"
+#include "D:\DevTools\Arduino\hardware\arduino\sam\variants\arduino_due_x\pins_arduino.h" 
+#include "D:\DevTools\Arduino\hardware\arduino\sam\variants\arduino_due_x\variant.h" 
 #include "D:\Users\Chris\Documents\Arduino\Sharp2Y0A21ArduinoDue\Sharp2Y0A21ArduinoDue.ino"
 #include "D:\Users\Chris\Documents\Arduino\Sharp2Y0A21ArduinoDue\Sharp2Y0A21ArduinoDue.cpp"
 #include "D:\Users\Chris\Documents\Arduino\Sharp2Y0A21ArduinoDue\Sharp2Y0A21ArduinoDue.h"

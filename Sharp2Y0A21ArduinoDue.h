@@ -8,7 +8,7 @@ class Sharp2Y0A21ArduinoDue
 public:
 	Sharp2Y0A21ArduinoDue();
 	~Sharp2Y0A21ArduinoDue();
-	void initialise(int pin);
+	void begin(int pin);
 	int getDistanceRaw();
 	int getDistanceVolts();
 	int getDistanceCM();
@@ -16,14 +16,21 @@ public:
 	int getAverageDistanceVolts();
 	int getAverageDistanceCM();
 	void setAveraging(int avg);
-	void setAccuracy(int bits);
+	int getAveraging();
+	void setADCAccuracy(int bits);
+	int getADCAccuracy();
+	void setPolyAccuracy(int poly);
+	int getPolyAccuracy();
 	void setPin(int pin);
+	int getPin();
 private:
 	int _mapRawToVolts(int raw);
 	int _mapVoltsToCM(int volts);
 	int _pin;
 	int _avg;
 	int _bits;
+	int _max;
+	int _poly;
 };
 
 #endif
